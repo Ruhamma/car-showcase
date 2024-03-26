@@ -51,21 +51,16 @@
   @apply text-[20px] text-black-100 font-light mt-5;
 }
 
-
-
-
-
 .hero__image-container {
-  @apply  flex justify-end items-end w-full xl:h-screen ;
+  @apply flex justify-end items-end w-full xl:h-screen;
 }
 
 .hero__image {
-   @apply relative lg:w-full w-[90%] xl:h-full h-[590px] z-0;
+  @apply relative lg:w-full w-[90%] xl:h-full h-[590px] z-0;
 }
 
 .hero__image-overlay {
   @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full max-w-full xl:h-screen h-[590px] overflow-hidden;
- 
 }
 /* END: Hero styles */
 
@@ -76,7 +71,7 @@
 }
 
 .home__filters {
-  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+  @apply mt-12 w-full flex justify-between items-center flex-wrap gap-5;
 }
 
 .home__filter-container {
