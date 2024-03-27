@@ -1,9 +1,9 @@
 "use client";
 import { CarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, carImageUrl } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
-import { CustomButton } from ".";
+import { CardDetail, CustomButton } from ".";
 
 interface CardProps {
   car: CarProps;
@@ -28,7 +28,7 @@ const Cards = ({ car }: CardProps) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={carImageUrl(car,"01")}
           alt="car"
           fill
           priority
@@ -70,7 +70,11 @@ const Cards = ({ car }: CardProps) => {
           />
         </div>
       </div>
-      
+      <CardDetail
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };

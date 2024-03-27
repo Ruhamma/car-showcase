@@ -2,12 +2,22 @@ import { Cards } from "@/components";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
+import { fuels, yearsOfProduction } from "@/constants";
 import { fetchCars } from "@/utils";
 import { Span } from "next/dist/trace";
 import Image from "next/image";
 
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({ searchParams }: { searchParams: any }) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
+  console.log("====================================");
+  console.log(searchParams);
+  console.log("====================================");
   const isEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   return (
     <main className="overflow-hidden">
@@ -22,8 +32,8 @@ export default async function Home() {
           <SearchBar />
 
           <div className="home__filter-container">
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter title="fuel" options={fuels}/>
+            <CustomFilter title="year" options={yearsOfProduction}/>
           </div>
         </div>
 
@@ -31,9 +41,8 @@ export default async function Home() {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car, index) => (
-                <Cards car={car}/>
-              ))  
-              }
+                <Cards car={car} />
+              ))}
             </div>
           </section>
         ) : (
