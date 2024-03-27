@@ -1,4 +1,4 @@
-import { Cards } from "@/components";
+import { Cards, ShowMore } from "@/components";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
@@ -44,6 +44,7 @@ export default async function Home({ searchParams }: { searchParams: any }) {
                 <Cards car={car} />
               ))}
             </div>
+            <ShowMore />
           </section>
         ) : (
           <div className="home__error-container">
