@@ -12,7 +12,7 @@ const CustomButton = ({
   rightIcon,
 }: CustomButtonProps) => {
   return (
-    <div className="w-full">
+    <div className="w-ful">
       <button
         disabled={false}
         type={btnType || "button"}

@@ -11,10 +11,9 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
-
     const newPathname = updateParams(title, e.value.toLowerCase());
 
-    router.push(newPathname);
+    router.push(newPathname, { scroll: false });
   };
   return (
     <div className="w-fit ">

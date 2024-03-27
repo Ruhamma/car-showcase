@@ -16,8 +16,9 @@ export default async function Home({ searchParams }: { searchParams: any }) {
     model: searchParams.model || "",
   });
   console.log("====================================");
-  console.log(searchParams);
+  console.log(allCars.length);
   console.log("====================================");
+  console.log(searchParams.limit);
   const isEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   return (
     <main className="overflow-hidden">
@@ -32,8 +33,8 @@ export default async function Home({ searchParams }: { searchParams: any }) {
           <SearchBar />
 
           <div className="home__filter-container">
-            <CustomFilter title="fuel" options={fuels}/>
-            <CustomFilter title="year" options={yearsOfProduction}/>
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
 
@@ -44,7 +45,10 @@ export default async function Home({ searchParams }: { searchParams: any }) {
                 <Cards car={car} />
               ))}
             </div>
-            <ShowMore />
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              next={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">
