@@ -28,7 +28,7 @@ const Cards = ({ car }: CardProps) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src={carImageUrl(car,"01")}
+          src={carImageUrl(car, "01")}
           alt="car"
           fill
           priority
@@ -61,7 +61,7 @@ const Cards = ({ car }: CardProps) => {
         <div className="car-card__btn-container">
           <CustomButton
             title="View More"
-            containerStyle="w-full py-[16px] rounded-full bg-primary-blue"
+            containerStyle="w-full py-[16px] rounded-full bg-primary-amber"
             textStyles="text-[14px] leading-[17px] font-bold text-white"
             rightIcon="/right-arrow.svg"
             handleClick={() => {

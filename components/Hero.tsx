@@ -17,13 +17,14 @@ const Hero = () => {
           Find,book or rent a car -- quickly and easily!
         </h1>
         <p className="hero__subtitle ">
-          Streamline your car rental experience with our effortless booking
-          process
+          Explore a vast selection of cars with our user-friendly search
+          filters. Find exactly what you need, from fuel-efficient hybrids to
+          spacious SUVs.
         </p>
 
         <CustomButton
           title="Explore Cars"
-          containerStyle="bg-primary-blue text-white rounded-full mt-10"
+          containerStyle="bg-primary-amber text-white rounded-full mt-10"
           handleClick={handleScroll}
         />
       </div>
