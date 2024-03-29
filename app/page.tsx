@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: { searchParams: any }) {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car, index) => (
-                <Cards car={car} />
+                <Cards car={car} key={index}/>
               ))}
             </div>
             <ShowMore
