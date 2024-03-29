@@ -9,7 +9,6 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
     <button
       type="submit"
       className={`searchbar__button -ml-3 z-10 ${otherClasses}`}
-      onClick={() => console.log("search")}
     >
       <Image
         src="/magnifying-glass.svg"

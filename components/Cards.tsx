@@ -58,10 +58,10 @@ const Cards = ({ car }: CardProps) => {
           </div>
         </div>
 
-        <div className="car-card__btn-container">
+        <div className="car-card__btn-container flex items-center justify-center">
           <CustomButton
             title="View More"
-            containerStyle="w-full py-[16px] rounded-full bg-primary-amber"
+            containerStyle="w-[35vh] py-[16px] rounded-full bg-primary-amber"
             textStyles="text-[14px] leading-[17px] font-bold text-white"
             rightIcon="/right-arrow.svg"
             handleClick={() => {

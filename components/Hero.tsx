@@ -13,9 +13,7 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className=" pt-36 padding-x">
-        <h1 className={`hero__title `}>
-          Find,book or rent a car -- quickly and easily!
-        </h1>
+        <h1 className={`hero__title `}>Find Your Perfect Ride</h1>
         <p className="hero__subtitle ">
           Explore a vast selection of cars with our user-friendly search
           filters. Find exactly what you need, from fuel-efficient hybrids to
@@ -30,7 +28,7 @@ const Hero = () => {
       </div>
       <div className="hero__image-container ">
         <div className="hero__image">
-          <Image src="/hero.png" alt="hero" fill className="object-contain" />
+          <Image src="/car1.png" alt="hero" fill className="object-contain" />
           <div className="hero__image-overlay" />
         </div>
       </div>
